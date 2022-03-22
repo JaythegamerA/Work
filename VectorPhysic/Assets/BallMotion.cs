@@ -4,6 +4,14 @@ using UnityEngine;
 
 public class BallMotion : MonoBehaviour
 {
+    public float initVX;
+    public float initVY;
+
+    public float currentVX;
+    public float currentVY;
+
+    public string Info1;
+    public string Info2;
 
     Vector2 velocityVector;
     Rigidbody2D rb;
@@ -13,7 +21,7 @@ public class BallMotion : MonoBehaviour
     {
 
         rb = GetComponent<Rigidbody2D>();
-        velocityVector = new Vector2(1, 1);
+        velocityVector = new Vector2(initVX, initVY);
         rb.velocity = velocityVector;
 
     }
@@ -21,6 +29,10 @@ public class BallMotion : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        currentVX = rb.velocity.x;
+        currentVY = rb.velocity.y;
+        float magnitude = rb.velocity.magnitude;
+        float angle = Mathf.Atan2(currentVY, currentVX)* Mathf.Rad2Deg;
+        Info1 = "V: " + rb.velocity.ToString()+ " Mag: " + magnitude+ " Angle: "+ angle;
     }
 }
