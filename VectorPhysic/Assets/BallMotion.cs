@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class VelocityVectors : MonoBehaviour
+public class BallMotion : MonoBehaviour
 {
 
     Vector2 velocityVector;
