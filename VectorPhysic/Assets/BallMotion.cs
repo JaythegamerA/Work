@@ -34,5 +34,8 @@ public class BallMotion : MonoBehaviour
         float magnitude = rb.velocity.magnitude;
         float angle = Mathf.Atan2(currentVY, currentVX)* Mathf.Rad2Deg;
         Info1 = "V: " + rb.velocity.ToString()+ " Mag: " + magnitude+ " Angle: "+ angle;
+
+        Vector2 unitVector = rb.velocity.normalized;
+        Info2 = "UnitVector: (" + unitVector.x + ";" + unitVector + ")";
     }
 }
