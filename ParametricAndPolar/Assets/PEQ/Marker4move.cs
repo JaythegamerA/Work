@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Marker3Move : MonoBehaviour
+public class Marker4move : MonoBehaviour
 {
     TrailRenderer TR;
 
@@ -10,7 +10,7 @@ public class Marker3Move : MonoBehaviour
     {
         TR = GetComponent<TrailRenderer>();
         TR.enabled = false;
-        transform.position = PEQ.Epicycloid(0);
+        transform.position = PEQ.Hypocycloid(0);
         TR.enabled = true;
 
     }
@@ -18,6 +18,6 @@ public class Marker3Move : MonoBehaviour
     void Update()
     {
         float t = Time.time;
-        transform.position = PEQ.Epicycloid(10 * t);
+        transform.position = PEQ.Hypocycloid(5 * t);
     }
 }

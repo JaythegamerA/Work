@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PEQ : MonoBehaviour
 {
-    public static Vector3 Circle(float t, float a =2)
+    public static Vector3 Circle(float t, float a = 2)
     {
         float x = a * Mathf.Cos(t);
         float y = a * Mathf.Sin(t);
@@ -12,7 +12,7 @@ public class PEQ : MonoBehaviour
         return new Vector3(x, y, z);
     }
 
-    public static Vector3 Astriod(float t, float a=3)
+    public static Vector3 Astriod(float t, float a = 3)
     {
         float x = a * Mathf.Pow(Mathf.Cos(t), 3);
         float y = a * Mathf.Pow(Mathf.Sin(t), 3);
@@ -20,8 +20,19 @@ public class PEQ : MonoBehaviour
         return new Vector3(x, y, z);
     }
 
-    public static Vector3 epitrochoid(float t, float a = 4)
+    public static Vector3 Epicycloid(float t, float a = 8, float b = 5)
     {
+        float x = (a + b) * Mathf.Cos(t) - b * Mathf.Cos((a / b + 1) * t);
+        float y = (a + b) * Mathf.Sin(t) - b * Mathf.Sin((a / b + 1) * t);
+        float z = 0;
+        return new Vector3(x, y, z);
+    }
 
+    public static Vector3 Hypocycloid(float t, float a=2, float b=6)
+    {
+        float x = (a - b) * Mathf.Cos(t) + b * Mathf.Cos((a / b - 1) * t);
+        float y = (a - b) * Mathf.Sin(t) + b * Mathf.Sin((a / b - 1) * t);
+        float z = 0;
+        return new Vector3(x, y, z);
     }
 }
